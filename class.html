@@ -10,8 +10,15 @@
 </html>
 <script>
   class Students {
+    constructor(name, age, standard) {
+      this.name = name;
+      this.age = age;
+      this.standard = standard;
+    }
     biodata() {
-      console.log("hi this is oops concept learning");
+      console.log(`Hi I am class method ${this.name}`);
     }
   }
+  let student1 = new Students("abhishek", 25, "MERN");
+  student1.biodata();
 </script>
