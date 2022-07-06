@@ -15,10 +15,43 @@
       this.age = age;
       this.standard = standard;
     }
+    //instance method -> is inheritable
     biodata() {
-      console.log(`Hi I am class method ${this.name}`);
+      return `Hi My name is ${this.name}, I'm ${this.age}, studying in ${this.standard}`;
     }
   }
-  let student1 = new Students("abhishek", 25, "MERN");
-  student1.biodata();
+  //   let student1 = new Students("abhishek", 25, "MERN");
+  //   student1.biodata();
+
+  class Player extends Students {
+    constructor(name, age, standard, game) {
+      super(name, age, standard);
+      this.game = game;
+    }
+    // biodata() {
+    //   console.log(
+    //     `Hi My name is ${this.name}, I'm ${this.age}, studying in ${this.standard} also playing ${this.game}`
+    //   );
+    // }
+    player_biodata() {
+      return `${super.biodata()}, I am player of ${this.game}`;
+    }
+  }
+
+  let player1 = new Player("ab", 25, "MERN", "badminton");
+  console.log(player1.player_biodata());
+
+  // closures
+
+  function x() {
+    for (var i = 1; i <= 5; i++) {
+      //   function close(i) {
+      setTimeout(function () {
+        console.log(i);
+      }, i * 1000);
+    }
+    //   close(i);
+    // }
+  }
+  x();
 </script>
