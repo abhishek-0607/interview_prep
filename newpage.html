@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">click Me</button>
+  </body>
+</html>
+<script>
+  //   "use strict";
+  function sum(a, a) {
+    console.log(add);
+    var add = a + 20;
+    console.log(add);
+  }
+  sum(10, 10);
+
+  const abhi = {
+    name: "abhishek silawat",
+    qualif: "MSc",
+    sum: function () {
+      console.log(this);
+      var add = 2 + 2;
+      console.log(add);
+      function child() {
+        var name = "abhishek";
+        console.log("child name:", name);
+        console.log(this);
+      }
+      child();
+    },
+  };
+  abhi.sum();
+
+  var obj = {
+    name: "abhishek",
+    sum: () => {
+      //   console.log(this);
+      console.log(this.name);
+    },
+  };
+  obj.sum();
+  const search = async () => {
+    try {
+      let movie = document.getElementById("query");
+      const res = await fetch("");
+      const data = res.json();
+      return data.results;
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  const debounce = (func, delay) => {
+    if (timeId) {
+      clearTimeout(timeId);
+    }
+    const timeId = setTimeout(() => {
+      func();
+    }, delay);
+  };
+
+  document.getElementById("btn").addEventListener("click", debounce);
+</script>

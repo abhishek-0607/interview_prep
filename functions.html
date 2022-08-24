@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <button id="clickMe">Click Me</button>
+  </body>
 </html>
 <script>
   // function statement
@@ -33,4 +35,47 @@
   };
   d("argu1", "argu2", "argu3");
   // First class function-> the ability to be used like values
+
+  // Callback Functions
+  setTimeout(function () {
+    console.log("timer");
+  }, 1000);
+  function x(y) {
+    console.log("x");
+    y();
+  }
+  x(function y() {
+    console.log("y");
+  });
+  function attachEventListener() {
+    let count = 0;
+    document.getElementById("clickMe").addEventListener("click", function () {
+      console.log("button clicked", ++count);
+    });
+  }
+  attachEventListener();
+
+  var x = 0;
+  function calling() {
+    var x = 100;
+    console.log(x);
+  }
+  calling();
+  console.log(x);
+
+  //
+  //
+  //
+  //
+  let me = {
+    name: "Ashutosh Verma",
+    thisInArrow: () => {
+      console.log("My name is " + this.name); // no 'this' binding here
+    },
+    thisInRegular: function () {
+      console.log("My name is " + this.name); // 'this' binding works here
+    },
+  };
+  me.thisInArrow();
+  me.thisInRegular();
 </script>
