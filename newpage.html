@@ -63,5 +63,7 @@
     }, delay);
   };
 
-  document.getElementById("btn").addEventListener("click", debounce);
+  document
+    .getElementById("btn")
+    .addEventListener("click", debounce(search, 3000));
 </script>

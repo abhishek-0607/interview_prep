@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #form {
+      background-color: green;
+      position: relative;
+      width: 150px;
+      height: 150px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .form {
+      background-color: blue;
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      width: 100px;
+      height: 100px;
+    }
+
+    p {
+      background-color: red;
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      margin: 0;
+    }
+  </style>
+  <body>
+    <form id="form">
+      FORM
+      <div class="form">
+        DIV
+        <p>P</p>
+      </div>
+    </form>
+
+    <div onclick="alert(`the bubbling doesn't reach here`)">
+      <button onclick="event.stopPropagation()">Click me</button>
+    </div>
+  </body>
+</html>
+<script>
+  form.onclick = function (event) {
+    event.target.style.backgroundColor = "yellow";
+
+    // chrome needs some time to paint yellow
+    setTimeout(() => {
+      alert("target = " + event.target.tagName + ", this=" + this.tagName);
+      event.target.style.backgroundColor = "";
+    }, 0);
+  };
+</script>
