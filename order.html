@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: grid;
+        width: 20%;
+      }
+      input {
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <input id="name" type="text" placeholder="Name" />
+      <input id="age" type="number" placeholder="Age" />
+      <button onclick="register()">Register</button>
+    </div>
+  </body>
+</html>
+<script>
+  let queue = ["messi", "ronaldo", "Utkarsh", "shinchan"];
+
+  function register() {
+    var age = document.getElementById("age").value;
+    var name = document.getElementById("name").value;
+
+    queue.push(name);
+    let message = `${name} your reg is succesful. now go stand!`;
+    alert(message);
+
+    let mypromise = new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        resolve(`${name} it's your turn now!`);
+      }, 1000);
+    });
+
+    mypromise.then(function (res) {
+      alert(res);
+    });
+    mypromise.then(function (res) {
+      setTimeout(function () {
+        alert(`prepared`);
+      }, 1000);
+    });
+    mypromise.then(function (res) {
+      setTimeout(function () {
+        alert(`completed`);
+      }, 6000);
+    });
+  }
+
+  //   function startVaccination() {
+  //     queue.shift();
+  //     if (queue.length === 0) {
+  //       clearInterval(inteval);
+  //     }
+  //     console.log(queue);
+  //   }
+  //   startVaccination();
+
+  //   let inteval = setInterval(startVaccination, 2000);
+</script>
