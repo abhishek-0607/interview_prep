@@ -7,11 +7,15 @@
 // }
 // console.log(a);
 
-const arr = new Array(4).fill([]);
-arr[2].push(5);
-console.log(arr);
-let obj = () => {
-  this.a = "pandey";
-};
-obj();
-console.log(a);
+// const arr = new Array(4).fill([]);
+// arr[2].push(5);
+// console.log(arr);
+// let obj = () => {
+//   this.a = "pandey";
+// };
+// obj();
+// console.log(a);
+const a = 0;
+const b = "";
+const c = [false];
+const outcome = !!(a || b || c || d);
