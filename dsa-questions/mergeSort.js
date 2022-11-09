@@ -4,7 +4,6 @@ function mergeSort(low, hi, arr) {
   if (low >= hi) {
     return;
   }
-
   var mid = low + Math.floor((hi - low) / 2);
   mergeSort(low, mid, arr);
   mergeSort(mid + 1, hi, arr);
@@ -12,8 +11,8 @@ function mergeSort(low, hi, arr) {
 }
 
 function merge(arr, l, mid, r) {
-  n1 = mid - l + 1;
-  n2 = r - mid;
+  var n1 = mid - l + 1;
+  var n2 = r - mid;
 
   var L = new Array(n1);
   var R = new Array(n2);
