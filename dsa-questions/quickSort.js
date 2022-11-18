@@ -13,14 +13,20 @@ function quickSort(arr, low, hi) {
 function pivot(arr, low, hi) {
   let pivot = arr[hi];
   let i = low - 1;
-  for (let j = 0; j < hi; j++) {
+  for (let j = low; j < hi; j++) {
     if (arr[j] < pivot) {
       i++;
-      [arr[i], arr[j]] = [arr[j], arr[i]];
+      swap(arr, i, j);
     }
   }
-  [arr[i + 1], arr[hi]] = [arr[hi], arr[i + 1]];
+  swap(arr, i + 1, hi);
   return i + 1;
+}
+
+function swap(arr, i, j) {
+  var temp = arr[i];
+  arr[i] = arr[j];
+  arr[j] = temp;
 }
 
 quickSort(arr, 0, arr.length - 1);
