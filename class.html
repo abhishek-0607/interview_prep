@@ -55,17 +55,15 @@
       this.game = game;
     }
     // biodata() {
-    //   console.log(
-    //     `Hi My name is ${this.name}, I'm ${this.age}, studying in ${this.standard} also playing ${this.game}`
-    //   );
+    //   return `Hi My name is ${this.name}, I'm ${this.age}, studying in ${this.standard} also playing ${this.game}`;
     // }
-    player_biodata() {
+    biodata() {
       return `${super.biodata()}, I am player of ${this.game}`;
     }
   }
 
   let player1 = new Player("ab", 25, "MERN", "badminton");
-  console.log(player1.player_biodata());
+  console.log("overriding", player1.biodata());
 
   // closures
 
