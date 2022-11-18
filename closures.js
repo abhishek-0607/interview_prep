@@ -12,3 +12,37 @@ init();
 // state(the lexical environment).In other words,
 // a closure gives you access to an outer function's scope from an inner function. In JavaScript,
 // closures are created every time a function is created, at function creation time.
+
+// emulating private methods with closures
+
+const counter = (function () {
+  let privateCounter = 0;
+  function changeBy(val) {
+    privateCounter += val;
+  }
+
+  return {
+    increment() {
+      changeBy(1);
+    },
+    decrement() {
+      changeBy(-1);
+    },
+
+    value() {
+      return privateCounter;
+    },
+  };
+})();
+
+var person = {
+  name: "masai",
+  arrowFunc: () => {
+    console.log(this.name);
+  },
+  func: function () {
+    console.log(this.name);
+  },
+};
+
+//Prototypes
