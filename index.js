@@ -19,3 +19,11 @@ const a = 0;
 const b = "";
 const c = [false];
 const outcome = !!(a || b || c || d);
+
+const num = () => {
+  let count = 0;
+  return () => (count += 1);
+};
+const num1 = num();
+const num2 = num();
+console.log(num2(), num1());
