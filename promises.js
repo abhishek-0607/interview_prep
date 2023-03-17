@@ -24,14 +24,14 @@ const cart = ["shoes", "shirt", "pant", "kurta"];
 // creating Promise object
 var myPromise = new Promise(function (resolve, reject) {
   const number1 = 2;
-  const number2 = 2;
+  const number2 = 1;
   // comparing two numbers
   if (number1 === number2) {
     // Operation successful
-    resolve();
+    resolve("resolved");
   } else {
     // Error occurred
-    reject();
+    reject("aaa");
   }
 });
 // Use Promise object
