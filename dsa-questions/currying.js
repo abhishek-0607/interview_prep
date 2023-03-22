@@ -17,3 +17,12 @@ function finiteSum(a) {
   };
 }
 console.log(finiteSum(1)(3)(2));
+
+function sum(a) {
+  return function (b) {
+    return function (c) {
+      return a + b + c;
+    };
+  };
+}
+console.log(sum(1)(2)(3));
