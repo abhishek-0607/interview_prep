@@ -38,3 +38,12 @@ var addTwoNumbers = function (l1, l2) {
 
   return head.next;
 };
+
+function abc() {
+  console.log(name);
+  console.log(x);
+  let x = "masai";
+  var name = "xyz";
+}
+
+abc();
