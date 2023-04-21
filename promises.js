@@ -99,3 +99,14 @@ async function test2() {
 }
 
 test2();
+
+// Example
+var arr = [1, 2, 3, 4];
+var promises = arr.map((el) =>
+  fetch(`https://jsonplaceholder.typicode.com/posts/${el}`).then((res) =>
+    res.json()
+  )
+);
+Promise.all(promises).then((data) => {
+  console.log("abc", data);
+});
