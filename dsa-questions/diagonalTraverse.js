@@ -1,10 +1,11 @@
-function diagonalTraverse(mat, N) {
-  function isValid(i, j) {
-    if (i < 0 || i >= N || j >= N || j < 0) {
-      return false;
-    }
-    return true;
+function isValid(i, j) {
+  if (i < 0 || i >= N || j >= N || j < 0) {
+    return false;
   }
+  return true;
+}
+
+function diagonalTraverse(mat, N) {
   var ans = [];
   for (let k = 0; k < N; k++) {
     var arr = [];
