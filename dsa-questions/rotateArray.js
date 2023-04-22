@@ -3,15 +3,15 @@
 
 var arr = [1, 2, 3, 4, 5, 6, 7];
 var d = 2;
-// var temp = [];
-// for (var i = 0; i < arr.length; i++) {
-//   if (i < d) {
-//     temp.push(arr[arr.length - d + i]);
-//   } else {
-//     temp.push(arr[i - d]);
-//   }
-// }
-// console.log(temp);
+var temp = [];
+for (var i = 0; i < arr.length; i++) {
+  if (i < d) {
+    temp.push(arr[arr.length - d + i]);
+  } else {
+    temp.push(arr[i - d]);
+  }
+}
+console.log(temp);
 
 // juggling algorithm
 
